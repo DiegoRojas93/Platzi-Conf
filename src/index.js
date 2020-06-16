@@ -4,12 +4,11 @@ import ReactDom from 'react-dom';
 import './global.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import BadgeNew from './Pages/BadgeNew'
-import Badges from './Pages/Badges'
+import App from './Components/App'
 
 const container = document.getElementById('app');
 
-ReactDom.render(<Badges
+ReactDom.render(<App
   />,
   container
 )
