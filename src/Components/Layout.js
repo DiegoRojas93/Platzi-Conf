@@ -8,7 +8,7 @@ function Layout(props) {
     <React.Fragment>
       <Navbar />
       {props.children}
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   )
 }

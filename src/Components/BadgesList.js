@@ -1,12 +1,23 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 
+import {Link} from 'react-router-dom'
 import './styles/BadgesList.css'
 class BadgesList extends React.Component {
   render(){
+
+    if (this.props.badges.length === 0){
+      return (
+        <div>
+          <h3>No badges were found</h3>
+          <Link className="btn btn-prymary" to="/badges/new">Create new badge</Link>
+        </div>
+      )
+    }
+
     return (
       <ul className="list-unstyled BadgesList">
-        {this.props.data.map((badge)=>{
+        {this.props.badges.map((badge)=>{
           return (
             <div className="card shadow-lg mt-2 p-3 rounded">
               <div className="cardBody">
@@ -25,7 +36,7 @@ class BadgesList extends React.Component {
                         </h3>
 
                         <div className="d-flex">
-                          <p className="text-success text-align-center font-weight-bold">Job:</p>
+                          <p className="text-success text-align-center font-weight-bold mr-1">Job:</p>
                           <h5 className="text-dark">{badge.jobTitle}</h5>
                         </div>
 
