@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 
+import './styles/BadgesList.css'
 class BadgesList extends React.Component {
   render(){
     return (
-      <ul className="list-unstyled">
+      <ul className="list-unstyled BadgesList">
         {this.props.data.map((badge)=>{
           return (
             <div className="card shadow-lg mt-2 p-3 rounded">
