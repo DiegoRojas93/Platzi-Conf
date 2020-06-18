@@ -31,16 +31,21 @@ class BadgesList extends React.Component {
 
                     <div className="col-sm-9 justify-contend-start">
                       <li key={badge.id}>
-                        <h3>
-                          {badge.firstName} {badge.lastName}
-                        </h3>
 
-                        <div className="d-flex">
-                          <p className="text-success text-align-center font-weight-bold mr-1">Job:</p>
-                          <h5 className="text-dark">{badge.jobTitle}</h5>
-                        </div>
+                        <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
 
-                        <p className=" text-primary">@{badge.twitter}</p>
+                          <h3>
+                            {badge.firstName} {badge.lastName}
+                          </h3>
+
+                          <div className="d-flex">
+                            <p className="text-success text-align-center font-weight-bold mr-1">Job:</p>
+                            <h5 className="text-dark">{badge.jobTitle}</h5>
+                          </div>
+
+                          <p className=" text-primary">@{badge.twitter}</p>
+
+                        </Link>
 
                       </li>
                     </div>
