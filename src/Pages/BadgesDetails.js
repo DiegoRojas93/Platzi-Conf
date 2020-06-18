@@ -1,50 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 import './styles/BadgeDetails.css'
 import confLogo from '../images/platziconf-logo.svg'
-import PageLoading from '../Components/PageLoading'
-import PageError from '../Components/PageError'
 import Badge from '../Components/Badge'
-import api from '../api'
 
-class BadgeDatails extends React.Component {
-  state = {
-    loading: true,
-    error: null,
-    data: undefined
-  }
+function badgeDetails (props){
 
-  componentDidMount(){
-    this.fetchData()
-  }
+  const badge = props.badge
 
-  fetchData = async () => {
-    this.setState({loading:true, error:null})
-
-    try{
-      const data = await api.badges.read(
-        this.props.match.params.badgeId
-      )
-      this.setState({loading: false, data:data})
-    }catch (error){
-      this.setState({loading: false, error:error})
-    }
-  }
-
-  render(){
-    if (this.state.loading){
-      return <PageLoading/>
-    }
-
-    if(this.state.error){
-      return <PageError error={this.state.error}/>
-    }
-
-    const badge = this.state.data
-
-    return (
-      <React.Fragment>
+  return(
+    <React.Fragment>
         <div className="BadgeDetails__hero">
           <div className="container">
             <div className="row">
@@ -87,8 +54,7 @@ class BadgeDatails extends React.Component {
           </div>
         </div>
       </React.Fragment>
-    )
-  }
+  )
 }
 
-export default BadgeDatails
+export default badgeDetails
