@@ -4,11 +4,14 @@ import './styles/BadgeNew.css'
 import header from '../images/platziconf-logo.svg'
 import Badge from '../Components/Badge'
 import BadgeForm from '../Components/BadgeForm'
+import PageLoading from '../Components/PageLoading'
 import api from '../api'
 import md5 from 'md5'
 class BadgeNew extends React.Component{
 
   state = {
+    loading: false,
+    error: null,
     form:{
       firstName: '',
       lastName: '',
@@ -39,11 +42,16 @@ class BadgeNew extends React.Component{
     try{
       await api.badges.create(this.state.form)
       this.setState({loading: false})
+
+      this.props.history.push('/badges')
     }catch(error){
       this.setState({loading: false, error: error})
     }
   }
   render(){
+    if(this.state.loading){
+      return <PageLoading />
+    }
     return (
       <React.Fragment>
 
@@ -68,6 +76,7 @@ class BadgeNew extends React.Component{
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
                 formValues={this.state.form}
+                error={this.state.error}
               />
             </div>
           </div>
