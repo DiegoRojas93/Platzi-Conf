@@ -32,7 +32,7 @@ class BadgesList extends React.Component {
                     <div className="col-sm-9 justify-contend-start">
                       <li key={badge.id}>
 
-                        <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
+                        <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}`}>
 
                           <h3>
                             {badge.firstName} {badge.lastName}
