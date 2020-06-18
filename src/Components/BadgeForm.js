@@ -16,11 +16,11 @@ class BadgeForm extends React.Component {
     console.log(`El boton a sido CLICLEADO`);
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log(`El boton a sido SUBMITTED`);
-    console.log(this.state);
-  }
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log(`El boton a sido SUBMITTED`);
+  //   console.log(this.state);
+  // }
 
   render(){
 
@@ -28,7 +28,7 @@ class BadgeForm extends React.Component {
       <React.Fragment>
         <h1>New Attendant</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input

@@ -8,6 +8,7 @@ function PageError (props) {
     <React.Fragment>
       <div className="PageError">
         <img className="img-fluid Error503" src={Error503} alt="Error503"/>
+
         {/* <span role="img" aria-label="Error">
           ❌{props.error.message} 😱
         </span> */}

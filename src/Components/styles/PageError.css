@@ -11,3 +11,11 @@
 .Error503 {
   max-width: 30%;
 }
+
+
+
+@media scrren and (max-widht: 300px){
+  .Error503 {
+    max-width: 50%;
+  }
+}
